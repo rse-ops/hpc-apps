@@ -9,8 +9,6 @@ FROM python:3-slim
 # depending on the category. Other (secret) settings are defined by
 # the operator
 
-# docker-compose.yml specific environ
-# Relative to CWD:
 ENV GUNICORN_CONFIG_FILE="balsam/server/gunicorn.conf.example.py"
 ENV SERVER_PORT=8000
 
