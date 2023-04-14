@@ -33,7 +33,7 @@ RUN apt-get update && \
        wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     apt-get install -y build-essential \
        postgresql \
-       libpq-dev \
+       libpq-dev && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/*
 
