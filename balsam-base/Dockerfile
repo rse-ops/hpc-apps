@@ -25,14 +25,15 @@ WORKDIR /balsam
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y wget && \
-    apt-get install -y lsb-release && \
-    apt-get install -y gnupg && \
-    sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
-    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
-    apt-get install -y build-essential && \
-    apt-get install -y postgresql && \
-    apt-get install -y libpq-dev && \
+    apt-get install -y wget \
+       lsb-release \
+       git \
+       gnupg && \
+       sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
+       wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+    apt-get install -y build-essential \
+       postgresql \
+       libpq-dev \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/*
 
