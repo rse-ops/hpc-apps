@@ -40,6 +40,6 @@ RUN apt-get update && \
 RUN git clone --depth 1 https://github.com/argonne-lcf/balsam /balsam
 WORKDIR /balsam
 RUN pip install --upgrade pip && pip install -r requirements/deploy.txt
-RUN mkdir -p /balsam/log && gunicorn balsam server migrate
-
+RUN mkdir -p /balsam/log
+COPY ./entrypoint/sh /balsam/entrypoint.sh
 ENTRYPOINT ["/balsam/entrypoint.sh"]
