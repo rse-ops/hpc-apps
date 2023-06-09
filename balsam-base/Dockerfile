@@ -1,4 +1,6 @@
-FROM python:3-slim
+FROM python:3.10-slim
+
+# DON'T use python 3.11 it will have a bug
 
 # This is a demo container for balsam + the flux operator.
 # It should not be used in production!
@@ -9,7 +11,7 @@ FROM python:3-slim
 # depending on the category. Other (secret) settings are defined by
 # the operator
 
-ENV GUNICORN_CONFIG_FILE="balsam/server/gunicorn.conf.example.py"
+ENV GUNICORN_CONFIG_FILE="/balsam/gunicorn.conf.py"
 ENV SERVER_PORT=8000
 
 # Logging
@@ -38,6 +40,7 @@ RUN apt-get update && \
 RUN git clone --depth 1 https://github.com/argonne-lcf/balsam /balsam
 WORKDIR /balsam
 RUN pip install --upgrade pip && pip install -r requirements/deploy.txt
-RUN mkdir -p /balsam/log
+RUN mkdir -p /balsam/log && \
+    cp /balsam/balsam/server/gunicorn.conf.example.py /balsam/gunicorn.conf.py
 COPY ./entrypoint.sh /balsam/entrypoint.sh
 ENTRYPOINT ["/balsam/entrypoint.sh"]
