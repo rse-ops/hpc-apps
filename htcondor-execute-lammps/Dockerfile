@@ -6,7 +6,7 @@ FROM htcondor/execute:${tag}
 
 RUN yum update -y && \
     yum install -y git mpich mpich-devel fftw3-devel libfabric-devel gcc gcc-c++ && \
-    curl -s -L https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh > cmake.sh
+    curl -s -L https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh > cmake.sh && \
     sh cmake.sh --prefix=/usr --skip-license && rm cmake.sh 
 
 ENV PATH=$PATH:/usr/lib64/mpich/bin 
