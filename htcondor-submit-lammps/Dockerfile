@@ -9,7 +9,7 @@ RUN yum update -y && \
     curl -s -L https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh > cmake.sh && \
     sh cmake.sh --prefix=/usr --skip-license && rm cmake.sh 
 
-ENV PATH=$PATH:/usr/lib64/mpich/bin 
+ENV PATH=$PATH:/usr/lib64/mpich/bin:/opt/lammps/build
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/mpich/lib
 
 RUN git clone --depth 1 --branch stable_29Sep2021_update2 https://github.com/lammps/lammps.git /opt/lammps && \
