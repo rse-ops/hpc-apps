@@ -18,8 +18,7 @@ ENV SERVER_PORT=8000
 ENV BALSAM_LOG_LEVEL=INFO
 ENV BALSAM_LOG_DIR="./balsam-logs"
 ENV BALSAM_AUTH_TOKEN_TTL=259200
-ENV BALSAM_AUTH_LOGIN_METHODS='["password", "oauth_authcode", "oauth_device"]'
-ENV BALSAM_OAUTH_SCOPE="read_basic_user_data"
+ENV BALSAM_AUTH_LOGIN_METHODS='["password"]'
 
 WORKDIR /balsam
 
@@ -37,7 +36,7 @@ RUN apt-get update && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone --depth 1 https://github.com/argonne-lcf/balsam /balsam
+RUN git clone -b add/headless-auth https://github.com/researchapps/balsam /balsam
 WORKDIR /balsam
 RUN pip install --upgrade pip && pip install -r requirements/deploy.txt
 RUN mkdir -p /balsam/log && \
