@@ -17,14 +17,6 @@ RUN git clone --depth 1 --branch stable_29Sep2021_update2 https://github.com/lam
     cmake ../cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DPKG_REAXFF=yes -DBUILD_MPI=yes -DPKG_OPT=yes -DFFT=FFTW3 -DCMAKE_PREFIX_PATH=/usr/lib/mpich -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu && \
     make && \
     make install
-
-# Create a home to put the examples in, and
-# ensure lmp executable is on path for flux user
-# And anyone can interact with lammps examples
-RUN useradd -ms /bin/bash -u 1234 flux && \
-    mkdir -p /home/flux && \
-    mv /opt/lammps/examples /home/flux/examples && \
-    chown -R 1234 /home/flux/examples
     
-WORKDIR /home/flux/examples/reaxff/HNS
+WORKDIR /opt/lammps/examples/reaxff/HNS
 
