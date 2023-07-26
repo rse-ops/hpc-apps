@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y fftw3-dev fftw3 pdsh libfabric-dev libfabric1 \
         dnsutils telnet strace cmake git g++ \
-        mpich wget curl
+        mpich wget curl unzip
 
 # install laamps
 WORKDIR /opt/
