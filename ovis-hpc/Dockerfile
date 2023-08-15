@@ -1,5 +1,5 @@
 ARG tag=latest
-FROM ubuntu${tag}
+FROM ubuntu:${tag}
 
 # docker build -t test .
 # docker run -itd --name test test 
