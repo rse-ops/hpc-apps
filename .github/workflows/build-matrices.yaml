@@ -17,7 +17,7 @@ jobs:
       empty_matrix: ${{ steps.dockerbuild.outputs.dockerbuild_matrix_empty }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
