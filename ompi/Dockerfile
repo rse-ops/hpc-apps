@@ -36,6 +36,6 @@ ENV PATH=/opt/conda/bin:$PATH
 WORKDIR /opt/ompi
 
 # We can't build java ones
-COPY ./Makefile ./Makefile
-RUN make
 ENV PATH=/opt/ompi:$PATH
+COPY ./Makefile ./Makefile
+RUN ls /opt/ompi && make
