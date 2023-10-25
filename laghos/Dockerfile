@@ -13,9 +13,14 @@ FROM ubuntu:${tag}
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install \
     git \
+    wget \
+    g++ \
+    gcc \
+    mpich \
     libbz2-dev \
     liblzma-dev \
     libncurses5-dev \
+    build-essential \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
