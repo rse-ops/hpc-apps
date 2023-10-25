@@ -2,7 +2,7 @@ ARG tag=jammy
 FROM ubuntu:${tag}
 
 # Python - instead of a system python we install mamba
-RUN apt-get update && apt-get install -y tzdata curl
+RUN apt-get update && apt-get install -y tzdata curl g++
 RUN /bin/bash -c "curl -L https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh > mambaforge.sh && bash mambaforge.sh -b -p /opt/conda && rm mambaforge.sh"
 ENV PATH=/opt/conda/bin:$PATH
 
