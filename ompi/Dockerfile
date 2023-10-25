@@ -24,7 +24,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt/
 RUN apt-get update && \
-    apt-get install -y gfortran git curl wget g++ && \
+    apt-get install -y gfortran git curl wget g++ build-essential && \
     wget https://docs.it4i.cz/src/ompi/ompi.tar.gz && \
     tar -xzvf ompi.tar.gz && \
     rm ompi/Makefile
