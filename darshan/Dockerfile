@@ -29,5 +29,5 @@ RUN git clone --depth 1 https://github.com/darshan-hpc/darshan && \
     mkdir -p /opt/logs && \
     # https://github.com/darshan-hpc/darshan/blob/84e55b611824acfe7e7f1133096e08648967a4e4/darshan-runtime/doc/darshan-runtime.txt#L80
     ./configure --prefix=/usr --with-log-path=/opt/logs --with-jobid-env=FLUX_JOB_ID && \
-    make && 
+    make && \
     make install
