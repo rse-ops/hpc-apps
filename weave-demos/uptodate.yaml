@@ -1,7 +1,6 @@
 dockerbuild:
-
   build_args:
     tag:
-      key: app
+      key: tag
       versions:
-       - latest
+       - jammy
