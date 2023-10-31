@@ -29,7 +29,7 @@ RUN  git clone https://github.com/LLNL/PyDV /tmp/pydv && \
 
 # Wrappers to ensure we source the mamba environment!
 RUN git clone --depth 1 https://github.com/LLNL/weave-demos /workflow
-WORKDIR /workflow/ball_bounce
+WORKDIR /workflow/CZ/ball_bounce
 COPY ./scripts/setup.sh /setup.sh
 COPY ./ball_bounce_suite_flux.yaml ./ball_bounce_suite_flux.yaml
 RUN /bin/bash /setup.sh && python3 -m pip install -r requirements.txt && \
