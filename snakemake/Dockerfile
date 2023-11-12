@@ -31,6 +31,6 @@ RUN pip install snakemake && \
     pip install git+https://github.com/snakemake/snakemake-executor-plugin-flux && \
     pip install git+https://github.com/snakemake/snakemake-interface-executor-plugins && \
     pip install git+https://github.com/snakemake/snakemake-executor-flux && \
-    matplotlib pysam
+    pip install matplotlib pysam
     
 WORKDIR /code
