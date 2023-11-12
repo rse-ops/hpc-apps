@@ -1,6 +1,6 @@
 dockerbuild:
   build_args:
     tag:
-      key: ubuntu
+      key: python
       versions:
-       - "22.04"
+       - "3.11"
