@@ -56,6 +56,3 @@ VOLUME /var/lib/cni
 VOLUME /var/log
 ENV PATH="$PATH:/usr/local/bin/aux"
 ENV CRI_CONFIG_FILE="/var/lib/rancher/k3s/agent/etc/crictl.yaml"
-
-ENV PATH=/opt/conda/bin:$PATH
-ENV LANG=C.UTF-8
