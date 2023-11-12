@@ -9,6 +9,7 @@ RUN apt-get update
 ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get update && \
     apt-get -y install \
+    bwa samtools bcftools \
     git \
     curl \
     && apt-get clean \
@@ -29,6 +30,7 @@ RUN pip install snakemake && \
     pip install git+https://github.com/snakemake/snakemake-interface-common && \
     pip install git+https://github.com/snakemake/snakemake-executor-plugin-flux && \
     pip install git+https://github.com/snakemake/snakemake-interface-executor-plugins && \
-    pip install git+https://github.com/snakemake/snakemake-executor-flux
+    pip install git+https://github.com/snakemake/snakemake-executor-flux && \
+    matplotlib pysam
     
 WORKDIR /code
