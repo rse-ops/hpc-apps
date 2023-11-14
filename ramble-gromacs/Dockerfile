@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Ensure the flux user owns the spack install
 RUN apt-get update && \
     apt-get install -y fftw3-dev fftw3 pdsh libfabric-dev libfabric-bin libfabric1 \
-    time git curl wget \
+    time git curl wget mpich \
     python3-pip
 
 WORKDIR /opt
