@@ -7,7 +7,8 @@ FROM ubuntu:${tag}
 
 # workdir: /workflow
 
-RUN apt-get update && apt-get install -y git python3-pip wget curl
+RUN apt-get update && apt-get install -y git python3-pip wget curl \
+    cmake mpich
 
 # Wrappers to ensure we source the mamba environment!
 WORKDIR /workflow
