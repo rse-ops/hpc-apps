@@ -1,5 +1,5 @@
-ARG tag=latest
-FROM spack/ubuntu-bionic:${tag}
+ARG tag=jammy
+FROM spack/ubuntu-${tag}:latest
 
 # docker build -t demo .
 # docker exec -it demo bash
